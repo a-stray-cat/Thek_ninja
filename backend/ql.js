@@ -14,13 +14,13 @@ const api = got.extend({
 });
 
 async function getToken() {
-  alert(authFile)
   const authConfig = JSON.parse(await readFile(authFile));
-  return authConfig.token;
+  return authFile;
 }
 
 module.exports.getEnvs = async () => {
   const token = await getToken();
+  alert(token)
   const body = await api({
     url: 'api/envs',
     searchParams: {
