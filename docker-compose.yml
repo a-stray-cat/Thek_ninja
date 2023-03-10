@@ -1,0 +1,24 @@
+version: "3"
+services:
+  qinglong:
+    image: whyour/qinglong:latest
+    container_name: qinglong
+    restart: unless-stopped
+    tty: true
+    ports:
+      - 5700:5700
+      - 5701:5701
+    environment:
+      - ENABLE_HANGUP=true
+      - ENABLE_WEB_PANEL=true
+    volumes:
+      - /etc/ql/config:/ql/data/config
+      - /etc/ql/log:/ql/data/log
+      - /etc/ql/db:/ql/data/db
+      - /etc/ql/repo:/ql/data/repo
+      - /etc/ql/raw:/ql/data/raw
+      - /etc/ql/scripts:/ql/data/scripts
+      - /etc/ql/jbot:/ql/data/jbot
+      - /etc/ql/ninja:/ql/data/ninja
+    labels:
+      - com.centurylinklabs.watchtower.enable=false
