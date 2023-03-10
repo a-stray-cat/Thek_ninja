@@ -8,7 +8,7 @@ const QRCode = require('qrcode');
 // 新增  , addWSCKEnv, delWSCKEnv, getWSCKEnvs, getWSCKEnvsCount, updateWSCKEnv
 const { addEnv, delEnv, getEnvs, getEnvsCount, updateEnv , addWSCKEnv, delWSCKEnv, getWSCKEnvs, getWSCKEnvsCount, updateWSCKEnv } = require('./ql');
 const path = require('path');
-const qlDir = process.env.QL_DIR || '/ql';
+const qlDir = process.env.QL_DIR || '/ql/data';
 const notifyFile = path.join(qlDir, 'shell/notify.sh');
 const { exec } = require('child_process');
 const { GET_RANDOM_TIME_UA } = require('./utils/USER_AGENT');

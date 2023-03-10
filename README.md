@@ -63,14 +63,15 @@ Ninja 仅支持 qinglong 2.8.2+
          - ENABLE_HANGUP=true
          - ENABLE_WEB_PANEL=true
        volumes:
-         - ./config:/ql/config
-         - ./log:/ql/log
-         - ./db:/ql/db
-         - ./repo:/ql/repo
-         - ./raw:/ql/raw
-         - ./scripts:/ql/scripts
-         - ./jbot:/ql/jbot
-   +      - ./ninja:/ql/ninja
+          - /etc/ql/config:/ql/data/config
+          - /etc/ql/log:/ql/data/log
+          - /etc/ql/db:/ql/data/db
+          - /etc/ql/repo:/ql/data/repo
+          - /etc/ql/raw:/ql/data/raw
+          - /etc/ql/scripts:/ql/data/scripts
+          - /etc/ql/jbot:/ql/data/jbot
+          - /etc/ql/ninja:/ql/data/ninja
+   +      - /etc/ql/ninja:/ql/data/ninja
    ```
 
    例（docker-run）：
