@@ -14,8 +14,7 @@ const api = got.extend({
 });
 
 async function getToken() {
-  const authConfig = JSON.parse(await readFile(authFile));
-  return authConfig;
+  return JSON.parse(await readFile(authFile)).token;
 }
 
 module.exports.getEnvs = async () => {
